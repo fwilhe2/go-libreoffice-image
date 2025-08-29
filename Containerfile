@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 FROM docker.io/golang:1.25-trixie
+ENV DEBIAN_FRONTEND=noninteractive
 
 COPY debian-backports.sources /etc/apt/sources.list.d/debian-backports.sources
 
