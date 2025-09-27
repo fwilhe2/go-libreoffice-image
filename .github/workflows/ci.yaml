@@ -38,6 +38,9 @@ jobs:
           containerfiles: |
             ./Containerfile
 
+      - name: Print LibreOffice Version
+        run: podman run -t --rm ${{ env.IMAGE_NAME_ORG }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} libreoffice --version
+
       - name: Push To ghcr.io
         id: push-to-ghcr
         if: ${{ github.event_name != 'pull_request' }}
